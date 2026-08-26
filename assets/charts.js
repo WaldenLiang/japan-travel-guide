@@ -55,8 +55,8 @@
       },
       data: [
         { value: 5000, name: '往返机票', itemStyle: { color: '#E8836A' } },
-        { value: 6900, name: '住宿', itemStyle: { color: accent } },
-        { value: 1300, name: '门票景点', itemStyle: { color: warmGold } },
+        { value: 8400, name: '住宿', itemStyle: { color: accent } },
+        { value: 1320, name: '门票景点', itemStyle: { color: warmGold } },
         { value: 3500, name: '城际交通', itemStyle: { color: skyBlue } },
         { value: 2250, name: '市内交通/近郊', itemStyle: { color: softGreen } },
         { value: 8800, name: '餐饮美食', itemStyle: { color: accent2 } },
@@ -70,8 +70,8 @@
   var days = ['Day1', 'Day2', 'Day3', 'Day4', 'Day5', 'Day6', 'Day7', 'Day8', 'Day9', 'Day10', 'Day11'];
   // Estimated daily spending (2 people, in CNY): flights + accommodation + tickets + transport + food
   var flights = [2500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2500];
-  var accommodation = [550, 550, 550, 600, 600, 1800, 650, 650, 650, 650, 0];
-  var tickets = [0, 850, 0, 40, 100, 60, 0, 0, 40, 0, 0];
+  var accommodation = [550, 550, 550, 650, 650, 2800, 675, 675, 675, 675, 0];
+  var tickets = [0, 850, 0, 40, 100, 80, 0, 0, 40, 0, 0];
   var transport = [100, 80, 80, 210, 80, 180, 1200, 550, 350, 120, 200];
   var food = [600, 800, 700, 800, 700, 0, 800, 700, 800, 900, 400];
 
