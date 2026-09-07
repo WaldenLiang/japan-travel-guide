@@ -280,14 +280,15 @@ h3 {
   margin-top: 1px;
 }
 
-/* ── Private Onsen Guide ── */
-.onsen-guide {
+/* ── Kimono Experience Guide ── */
+.kimono-guide {
   margin: 28px 0;
   display: grid;
   gap: 18px;
 }
-.onsen-hero {
-  background: linear-gradient(135deg, rgba(49,90,107,0.10), rgba(101,167,122,0.12));
+.kimono-highlight {
+  background: rgba(241,248,243,0.82);
+  border-left: 4px solid var(--accent);
   border-radius: 8px;
   padding: 24px;
   display: grid;
@@ -295,27 +296,26 @@ h3 {
   gap: 18px;
   align-items: stretch;
 }
-.onsen-hero h3 {
+.kimono-highlight h3 {
   margin-top: 0;
   font-size: 1.15rem;
 }
-.onsen-hero p {
+.kimono-highlight p {
   color: var(--ink);
   font-size: 0.96rem;
 }
-.onsen-budget {
+.kimono-budget {
   background: rgba(255,253,247,0.82);
-  border-left: 4px solid var(--accent);
   border-radius: 8px;
   padding: 18px;
 }
-.onsen-budget .label {
+.kimono-budget .label {
   font-size: 0.78rem;
   color: var(--muted);
   font-weight: 700;
   letter-spacing: 0.08em;
 }
-.onsen-budget .price {
+.kimono-budget .price {
   font-family: 'Lora', serif;
   font-size: 1.55rem;
   color: var(--accent);
@@ -323,46 +323,46 @@ h3 {
   line-height: 1.2;
   margin: 5px 0;
 }
-.onsen-grid {
+.kimono-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
-.onsen-panel {
+.kimono-panel {
   background: rgba(255,253,247,0.88);
   border-left: 3px solid var(--soft-green);
   border-radius: 8px;
   padding: 18px 18px 16px;
   box-shadow: var(--shadow-soft);
 }
-.onsen-panel.warn { border-left-color: var(--warm-gold); }
-.onsen-panel.nope { border-left-color: var(--accent); }
-.onsen-panel h3 {
+.kimono-panel.warn { border-left-color: var(--warm-gold); }
+.kimono-panel.evening { border-left-color: var(--accent); }
+.kimono-panel h3 {
   margin: 0 0 10px;
   font-size: 1rem;
 }
-.onsen-panel ul {
+.kimono-panel ul {
   padding-left: 18px;
   color: var(--ink);
   font-size: 0.9rem;
 }
-.onsen-panel li { margin: 6px 0; }
-.onsen-rules {
+.kimono-panel li { margin: 6px 0; }
+.kimono-checklist {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
-.onsen-rule {
+.kimono-rule {
   background: rgba(241,248,243,0.72);
   border-radius: 8px;
   padding: 16px;
 }
-.onsen-rule strong {
+.kimono-rule strong {
   color: var(--accent2);
   display: block;
   margin-bottom: 6px;
 }
-.onsen-rule span {
+.kimono-rule span {
   color: var(--muted);
   font-size: 0.88rem;
 }
@@ -700,10 +700,10 @@ mark.key {
   .day-body { padding: 18px; }
   .budget-total .total { font-size: 2rem; }
   .checklist-grid { grid-template-columns: 1fr; }
-  .onsen-hero,
-  .onsen-grid,
-  .onsen-rules { grid-template-columns: 1fr; }
-  .onsen-hero { padding: 20px; }
+  .kimono-highlight,
+  .kimono-grid,
+  .kimono-checklist { grid-template-columns: 1fr; }
+  .kimono-highlight { padding: 20px; }
   .table-wrap { margin-left: -16px; margin-right: -16px; border-radius: 0; border-left: none; border-right: none; }
 }
 
@@ -1596,7 +1596,7 @@ body.capture-mode .export-panel {
           <div class="tutorial-step">
             <div class="step-num gold">1</div>
             <div class="step-text"><strong>选择预订平台</strong>
-              <span class="step-note">• <strong>Booking.com</strong>：房源最全，支持免费取消，界面友好（最推荐）<br>• <strong>Agoda</strong>：日本酒店价格常有独家优惠，值得比价<br>• <strong>携程/去哪儿</strong>：中文客服，售后方便，偶尔有优惠券<br>• <strong>Jalan / るるぶ</strong>：日本本土平台，温泉旅馆/日式旅馆选择多<br>💡 建议：同一酒店在 2~3 个平台比价后下单</span>
+              <span class="step-note">• <strong>Booking.com</strong>：房源最全，支持免费取消，界面友好（最推荐）<br>• <strong>Agoda</strong>：日本酒店价格常有独家优惠，值得比价<br>• <strong>携程/去哪儿</strong>：中文客服，售后方便，偶尔有优惠券<br>• <strong>Jalan / るるぶ</strong>：日本本土平台，传统住宿和町屋房源选择多<br>💡 建议：同一酒店在 2~3 个平台比价后下单</span>
             </div>
           </div>
           <div class="tutorial-step">
@@ -1774,7 +1774,7 @@ body.capture-mode .export-panel {
           <div class="tutorial-step">
             <div class="step-num blue">2</div>
             <div class="step-text"><strong>优先方案：酒店寄存最稳</strong>
-              <span class="step-note">入住前或退房后，把大行李箱寄存在<strong>当天入住/退房的酒店前台</strong>，通常最省心，也最适合 Day 4 大阪→京都、Day 6 京都换日式旅馆、Day 11 返程前补货。注意：多数酒店只接受<strong>当天入住或当天退房客人</strong>，不一定接受非住客；贵重物品、护照、现金、相机、电脑不要放箱内。</span>
+              <span class="step-note">入住前或退房后，把大行李箱寄存在<strong>当天入住/退房的酒店前台</strong>，通常最省心，也最适合 Day 4 大阪→京都、Day 6 奈良往返、Day 11 返程前补货。注意：多数酒店只接受<strong>当天入住或当天退房客人</strong>，不一定接受非住客；贵重物品、护照、现金、相机、电脑不要放箱内。</span>
             </div>
           </div>
           <div class="tutorial-step">
@@ -1792,11 +1792,11 @@ body.capture-mode .export-panel {
           <div class="tutorial-step">
             <div class="step-num blue">5</div>
             <div class="step-text"><strong>远距离换酒店：考虑行李配送</strong>
-              <span class="step-note">如果从京都普通酒店换到岚山日式旅馆，或从京都到东京不想拖箱子，可以考虑酒店前台的<strong>宅急便 / 行李配送</strong>。优点是不用拖大箱赶车；缺点是通常不是即时送达，常见需要隔天到达，且要提前填写目的地酒店信息。因此适合“次日或后日使用的行李”，不适合当天晚上必须马上拿到的物品。</span>
+              <span class="step-note">如果从京都到东京不想拖箱子，可以考虑酒店前台的<strong>宅急便 / 行李配送</strong>。优点是不用拖大箱赶车；缺点是通常不是即时送达，常见需要隔天到达，且要提前填写目的地酒店信息。因此适合“次日或后日使用的行李”，不适合当天晚上必须马上拿到的物品。</span>
             </div>
           </div>
           <div class="tutorial-info">
-            <strong>✅ 本行程最推荐做法：</strong>Day 4 抵达京都后先把大箱寄存在京都酒店；Day 6 早上退房时把大箱寄存在原酒店，傍晚从奈良回来取箱再换日式旅馆。若日式旅馆在岚山，上午先联系旅馆确认能否提前寄存，或 15:30 左右从奈良返程更稳。
+            <strong>✅ 本行程最推荐做法：</strong>Day 4 抵达京都后先把大箱寄存在京都酒店，再轻装前往伏见稻荷和清水寺；Day 6 是奈良往返，无需退房或转移行李，傍晚直接回原酒店休息即可。
           </div>
           <div class="tutorial-warn">
             <strong>⚠️ 真实避坑：</strong>不要把“大行李箱寄存”完全押在车站 coin locker 上，尤其是京都站、新宿站、东京站这类热门大站。最稳顺序是：<strong>酒店前台 ＞ 人工行李寄存处 ＞ 预约制寄存服务 ＞ 大型 coin locker</strong>。当天要坐新干线或赶晚餐时，至少预留 30~60 分钟找柜、排队、取箱。
@@ -1874,7 +1874,7 @@ body.capture-mode .export-panel {
   </div>
 
   <div class="tip-box">
-    <strong>💡 路线设计思路：</strong>关西国际机场（大阪）进、成田/羽田机场（东京）出，完全不走回头路。整体改为“少量高价值付费 + 大量免费/低价体验”：保留 USJ、日式旅馆、少数经典寺院，其余展望台和城郭内部以免费外观/街区替代。11天10夜版把东京段增加到4晚，富士山河口湖和镰仓分开两天安排；如河口湖当天阴雨，可与镰仓日互换。
+    <strong>💡 路线设计思路：</strong>关西国际机场（大阪）进、成田/羽田机场（东京）出，完全不走回头路。整体改为“少量高价值付费 + 大量免费/低价体验”：保留 USJ、清水寺区域的和服体验、少数经典寺院，其余展望台和城郭内部以免费外观/街区替代。11天10夜版把东京段增加到4晚，富士山河口湖和镰仓分开两天安排；如河口湖当天阴雨，可与镰仓日互换。
   </div>
 </section>
 
@@ -1983,7 +1983,7 @@ body.capture-mode .export-panel {
     <div class="day-body">
       <div class="day-section">
         <div class="day-label">今日安排</div>
-        <p>上午退房后从<strong>难波</strong>先前往大阪/梅田，再乘 <strong>JR 京都线新快速</strong>前往京都。大阪站到京都站约 30 分钟，但从难波酒店出发整体建议按 <strong>50~70 分钟</strong>预留。到京都站后先寄存行李，随即乘 JR 奈良线一站到<strong>稻荷站</strong>（约 5 分钟），游览<strong>伏见稻荷大社</strong>千本鸟居。中午经京阪电车移动到<strong>清水五条</strong>，再步行上坡进入清水寺区域午餐并参观，沿<strong>二年坂、三年坂</strong>石板路漫步。傍晚在<strong>祇园</strong>花见小路闲逛，碰运气看是否能遇见艺伎。</p>
+        <p>上午退房后从<strong>难波</strong>先前往大阪/梅田，再乘 <strong>JR 京都线新快速</strong>前往京都。大阪站到京都站约 30 分钟，但从难波酒店出发整体建议按 <strong>50~70 分钟</strong>预留。到京都站后先寄存行李，随即乘 JR 奈良线一站到<strong>稻荷站</strong>（约 5 分钟），游览<strong>伏见稻荷大社</strong>千本鸟居。中午经京阪电车移动到<strong>清水五条</strong>，在清水寺区域午餐后前往<strong>冈本和服租赁清水东山店</strong>完成和服体验，再依次游览<strong>清水寺、二年坂、三年坂</strong>。傍晚归还服装后，在<strong>祇园</strong>花见小路闲逛。</p>
       </div>
       <div class="day-section">
         <div class="day-label">美食推荐</div>
@@ -1994,11 +1994,11 @@ body.capture-mode .export-panel {
       </div>
       <div class="day-info-grid">
         <div class="day-info-item"><div class="label">交通</div><div class="value">大阪/梅田→京都 JR + JR奈良线 + 京阪电车 + 京都地下铁・巴士1日券/IC卡</div></div>
-        <div class="day-info-item"><div class="label">门票</div><div class="value">伏见稻荷免费 + 清水寺约 40 元/2人</div></div>
+        <div class="day-info-item"><div class="label">门票</div><div class="value">伏见稻荷免费 + 清水寺约 40 元/2人 + 和服体验约 500 元/2人</div></div>
         <div class="day-info-item"><div class="label">住宿</div><div class="value">四条河原町区域</div></div>
       </div>
       <div class="tip-box">
-        <strong>💡 小贴士：</strong>伏见稻荷大社 24 小时开放且免费，上午 9~10 点到达人流适中。走到四辻观景台即可折返（约 1~1.5 小时），不必走全程。从稻荷站附近可坐京阪电车到清水五条站（车程约 8 分钟），但出站后到清水寺区域仍需步行上坡约 20~30 分钟，建议把这段按 40~50 分钟预留。
+        <strong>👘 和服体验提醒：</strong>首选预约冈本和服租赁清水东山店的 12:45~13:00 时段，换装和发型通常预留 45~60 分钟；17:50 前归还即可顺路进入祇园晚餐。服装和尺码以到店试穿为准，旺季请至少提前 2~3 周在官网锁定时段。
       </div>
     </div>
   </div>
@@ -2034,24 +2034,21 @@ body.capture-mode .export-panel {
       <div class="day-num">D6</div>
       <div class="day-meta">
         <div class="day-title">奈良一日游 · 与小鹿同行</div>
-        <div class="day-subtitle">京都 → 奈良 · 奈良公园 · 东大寺 · 春日大社 → 返回京都 · 换住日式旅馆</div>
+        <div class="day-subtitle">京都 → 奈良 · 奈良公园 · 东大寺 · 春日大社 → 返回京都 · 市区晚餐</div>
       </div>
     </div>
     <div class="day-body">
       <div class="day-section">
         <div class="day-label">今日安排</div>
-        <p>早上退房后，将行李寄存在原酒店或京都站coin locker。从京都乘 <strong>JR</strong> 前往奈良（约 45 分钟）。在<strong>奈良公园</strong>喂小鹿，参观宏伟的<strong>东大寺</strong>（世界最大木造建筑），沿参道走到<strong>春日大社</strong>。傍晚返回京都，取行李后<strong>换住带私汤的一泊二食旅馆</strong>，重点体验怀石料理晚餐 + 私密泡汤，不把公共大浴场作为决策因素。</p>
+        <p>早餐后从京都乘 <strong>JR</strong> 前往奈良（约 45 分钟）。在<strong>奈良公园</strong>喂小鹿，参观宏伟的<strong>东大寺</strong>（世界最大木造建筑），沿参道走到<strong>春日大社</strong>。傍晚返回京都，继续入住原酒店，在四条河原町或祇园安排一顿轻松的京都晚餐，为次日的新干线移动留出余裕。</p>
       </div>
       <div class="day-info-grid">
         <div class="day-info-item"><div class="label">交通</div><div class="value">JR 京都↔奈良往返 + 步行</div></div>
         <div class="day-info-item"><div class="label">门票</div><div class="value">东大寺约 80 元/2人；春日大社外苑免费，回廊特别参拜另收费</div></div>
-        <div class="day-info-item"><div class="label">住宿</div><div class="value">🏮 私汤旅馆（一泊二食，优先可预约贷切私汤）</div></div>
+        <div class="day-info-item"><div class="label">住宿</div><div class="value">四条河原町 / 祇园原酒店连住</div></div>
       </div>
       <div class="tip-box">
         <strong>⚠️ 小鹿提醒：</strong>鹿仙贝不要攥在手里，会被鹿群围攻！建议掰成小块分批喂。小鹿很温顺但发情期的公鹿需保持距离。
-      </div>
-      <div class="tip-box">
-        <strong>🏮 私汤入住提示：</strong>一泊二食旅馆的晚餐通常有固定开始时段，错过可能无法补餐。预订时优先确认「貸切風呂」或「客室露天風呂付き」而不是只看大浴场；若订祇园 / 四条河原町 / 京都站周边，16:45抵达京都后取行李再入住基本可行；若订岚山 / 高雄等更有私汤氛围的区域，建议15:30左右从奈良返程，并提前预约私汤时段，避免赶不上18:00~19:00晚餐。
       </div>
     </div>
   </div>
@@ -2380,24 +2377,24 @@ body.capture-mode .export-panel {
           <div class="timeline-content">清水寺区域午餐<span class="tl-note">推荐：中村藤治抹茶甜品 / 京都汤豆腐</span></div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-time">12:45–14:00</div>
+          <div class="timeline-time">12:45–13:45</div>
+          <div class="timeline-content"><strong>和服体验</strong><span class="tl-note">冈本和服租赁清水东山店换装、发型整理；预约 12:45~13:00 到店更稳</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">13:45–14:45</div>
           <div class="timeline-content"><strong>清水寺</strong>参观<span class="tl-note">清水舞台远眺京都全景，音羽瀑布打卡</span></div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-time">14:00–15:15</div>
-          <div class="timeline-content">漫步<strong>二年坂、三年坂</strong><span class="tl-note">石板路+和风小店，买伴手礼</span></div>
-        </div>
-        <div class="timeline-item free">
-          <div class="timeline-time">15:15–16:15</div>
-          <div class="timeline-content">机动时间：回酒店入住 / 休息片刻</div>
+          <div class="timeline-time">14:45–16:15</div>
+          <div class="timeline-content">漫步<strong>二年坂、三年坂</strong><span class="tl-note">石板路和和风小店最适合和服拍照；注意石阶和裙摆</span></div>
         </div>
         <div class="timeline-item">
           <div class="timeline-time">16:15–17:45</div>
-          <div class="timeline-content"><strong>祇园</strong>花见小路闲逛<span class="tl-note">傍晚运气好可遇见艺伎</span></div>
+          <div class="timeline-content"><strong>高台寺周边 → 祇园</strong>散步<span class="tl-note">17:45 前返回店铺，归还后再轻装逛花见小路</span></div>
         </div>
         <div class="timeline-item food">
-          <div class="timeline-time">17:45–19:15</div>
-          <div class="timeline-content">京都晚餐：汤豆腐 / 京料理<span class="tl-note">推荐：南禅寺顺正 / 祇园小石</span></div>
+          <div class="timeline-time">18:00–19:30</div>
+          <div class="timeline-content">祇园晚餐<span class="tl-note">归还服装后再用餐，避免沾染酱汁或受店铺返还时间限制</span></div>
         </div>
       </div>
     </div>
@@ -2463,7 +2460,7 @@ body.capture-mode .export-panel {
       <div class="timeline-track">
         <div class="timeline-item rest">
           <div class="timeline-time">07:30–08:00</div>
-          <div class="timeline-content">退房，行李寄存在原酒店或京都站coin locker<span class="tl-note">大部分酒店支持退房后免费寄存行李至傍晚</span></div>
+          <div class="timeline-content">酒店早餐，轻装出发<span class="tl-note">京都连住，无需退房或处理大行李</span></div>
         </div>
         <div class="timeline-item food">
           <div class="timeline-time">08:00–08:30</div>
@@ -2487,23 +2484,19 @@ body.capture-mode .export-panel {
         </div>
         <div class="timeline-item free">
           <div class="timeline-time">14:30–16:00</div>
-          <div class="timeline-content">机动时间：奈良町闲逛 / 回公园再喂鹿 / 咖啡馆休息<span class="tl-note">若旅馆在岚山等较远区域，建议压缩此段，15:30左右从奈良返程</span></div>
+          <div class="timeline-content">机动时间：奈良町闲逛 / 回公园再喂鹿 / 咖啡馆休息</div>
         </div>
         <div class="timeline-item transport">
           <div class="timeline-time">16:00–16:45</div>
-          <div class="timeline-content">JR 返回京都<span class="tl-note">订祇园 / 四条河原町 / 京都站周边旅馆时，此时间可操作性较好</span></div>
+          <div class="timeline-content">JR 返回京都<span class="tl-note">回原酒店短暂休息后，再步行前往四条河原町或祇园晚餐</span></div>
         </div>
         <div class="timeline-item transport">
-          <div class="timeline-time">16:45–17:15</div>
-          <div class="timeline-content">回原酒店取行李 → <strong>换住私汤旅馆</strong><span class="tl-note">若旅馆距离较远，上午先把行李寄到旅馆或改为15:30返程更稳妥</span></div>
+          <div class="timeline-time">16:45–17:30</div>
+          <div class="timeline-content">回原酒店休息、整理照片</div>
         </div>
         <div class="timeline-item rest">
-          <div class="timeline-time">17:15–18:00</div>
-          <div class="timeline-content">旅馆check-in，换浴衣，确认私汤时段<span class="tl-note">优先预约晚餐前或早餐前的贷切私汤</span></div>
-        </div>
-        <div class="timeline-item food">
           <div class="timeline-time">18:00–19:30</div>
-          <div class="timeline-content"><strong>旅馆怀石料理晚餐</strong><span class="tl-note">一泊二食晚餐通常固定时段，务必按时到</span></div>
+          <div class="timeline-content"><strong>四条河原町 / 祇园晚餐</strong><span class="tl-note">可按当天体力选择居酒屋、汤豆腐或京料理</span></div>
         </div>
       </div>
     </div>
@@ -2736,8 +2729,8 @@ body.capture-mode .export-panel {
 
 <!-- ═══════════ 6. HOTEL ═══════════ -->
 <section id="hotel">
-  <h2><span class="num">06</span>酒店住宿推荐</h2>
-  <p class="section-desc">精选交通便利、性价比高的酒店区域，每座城市住在核心地带，减少通勤时间。京都特别推荐 1 晚日式旅馆体验。</p>
+  <h2><span class="num">06</span>住宿与和服体验</h2>
+  <p class="section-desc">京都连住同一间酒店，减少奈良往返当天的行李负担；把预算留给清水寺区域的和服体验。</p>
 
   <div class="table-wrap">
     <table>
@@ -2759,18 +2752,11 @@ body.capture-mode .export-panel {
           <td><span class="price-tag">¥500~600</span></td>
         </tr>
         <tr>
-          <td>Day 4~5</td>
+          <td>Day 4~6</td>
           <td>京都</td>
           <td><span class="hotel-name">四条河原町 / 祇园</span><br><span class="hotel-area">京都最繁华商圈，步行可达祇园、锦市场</span></td>
-          <td>町屋民宿 / 和风酒店<br><small>推荐：三井花园酒店京都、Cross Hotel京都、町屋民宿</small></td>
+          <td>町屋民宿 / 和风酒店<br><small>连住 3 晚；推荐：三井花园酒店京都、Cross Hotel京都、町屋民宿</small></td>
           <td><span class="price-tag">¥550~700</span></td>
-        </tr>
-        <tr style="background:rgba(199,91,106,0.04);">
-          <td>Day 6</td>
-          <td>京都</td>
-          <td><span class="hotel-name">京都站 / 四条河原町 / 祇园 / 岚山</span><br><span class="hotel-area">优先保证晚餐时段与私汤预约</span></td>
-          <td>🏮 <strong>私汤旅馆（貸切風呂 / 客室露天風呂）</strong><br><small>只考虑一泊二食 + 私汤；不把公共大浴场计入体验价值</small></td>
-          <td><span class="price-tag">¥2,000~3,500</span><br><small>目标价，2人/晚</small></td>
         </tr>
         <tr>
           <td>Day 7~10</td>
@@ -2783,42 +2769,42 @@ body.capture-mode .export-panel {
     </table>
   </div>
 
-  <div class="onsen-guide">
-    <div class="onsen-hero">
+  <div class="kimono-guide">
+    <div class="kimono-highlight">
       <div>
-        <h3>私汤性价比攻略：先锁定私密感，再控制价格</h3>
-        <p>这趟行程只保留 1 晚高价值旅馆体验，目标不是住最贵的温泉旅馆，而是用合理预算买到「一泊二食 + 私密泡汤 + 不赶晚餐」的组合。京都市区真正天然温泉不算多，最有性价比的做法是优先找可预约的 <strong>貸切風呂</strong>，其次才考虑昂贵的 <strong>客室露天風呂付き</strong>。</p>
+        <h3>和服体验攻略：把体验放在最适合拍照的一段</h3>
+        <p>Day 4 在伏见稻荷结束后前往清水寺区域，先完成<strong>和服体验</strong>，再按清水寺、二年坂、三年坂、高台寺周边的顺序步行。路线几乎没有折返，服装在祇园晚餐前归还，既避开赶店压力，也不用穿和服坐长距离交通。</p>
       </div>
-      <div class="onsen-budget">
-        <div class="label">建议预算线</div>
-        <div class="price">2,000~3,500 元</div>
-        <p>2人/晚目标价；超过 4,500 元需谨慎，超过 5,000 元除非房间、餐食、私汤、位置都明显优秀，否则不推荐。</p>
+      <div class="kimono-budget">
+        <div class="label">体验预算线</div>
+        <div class="price">约 500 元</div>
+        <p>2人基础和服、发型与配件的参考预算。樱花季、红叶季和指定款式通常更高，以预约页结算价为准。</p>
       </div>
     </div>
 
-    <div class="onsen-grid">
-      <div class="onsen-panel">
-        <h3>首选：可预约贷切私汤</h3>
+    <div class="kimono-grid">
+      <div class="kimono-panel">
+        <h3>首选：冈本和服租赁</h3>
         <ul>
-          <li>关键词：貸切風呂 / 貸切露天風呂 / private bath</li>
-          <li>优点：私密泡汤体验到位，房价通常比房内露天风吕低很多</li>
-          <li>预订时确认：是否需另付费、一次几分钟、能否提前预约时段</li>
+          <li>门店：<a href="https://www.okamoto-kimono-en.com/storeinfo/higashiyama.html" target="_blank" rel="noopener">清水东山店</a></li>
+          <li>适配：就在清水寺和二年坂动线上，适合 Day 4 的主路线</li>
+          <li>实操：官方显示 9:00–18:00 营业，最晚 17:50 返还；建议预约 12:45~13:00 到店</li>
         </ul>
       </div>
-      <div class="onsen-panel warn">
-        <h3>次选：客房自带私汤</h3>
+      <div class="kimono-panel warn">
+        <h3>备选：梦馆五条店</h3>
         <ul>
-          <li>关键词：客室露天風呂付き / private open-air bath in room</li>
-          <li>优点：体验最好，泡汤时间自由，适合情侣</li>
-          <li>缺点：价格常明显翻倍，只在平日或早鸟价合适时考虑</li>
+          <li>门店：<a href="https://www.en-kyoto.yumeyakata.com/" target="_blank" rel="noopener">梦馆五条店</a></li>
+          <li>适配：靠近五条站，适合更看重款式选择和较早预约时段的情侣</li>
+          <li>实操：官方公布营业至 17:30，最晚 16:00 入店；体验后再搭车前往清水寺区域</li>
         </ul>
       </div>
-      <div class="onsen-panel nope">
-        <h3>排除：只有大浴场</h3>
+      <div class="kimono-panel evening">
+        <h3>夜拍备选：CASA 祇园店</h3>
         <ul>
-          <li>不把男女分开的公共大浴场计入本次核心体验</li>
-          <li>房间普通浴缸也不等于私汤，除非明确是温泉/檜木浴池且体验足够好</li>
-          <li>只写「温泉大浴場あり」但无私汤信息的旅馆直接降级</li>
+          <li>门店：<a href="https://gionkimono.com/en/shop/" target="_blank" rel="noopener">CASA 祇园店</a></li>
+          <li>适配：想把重点放在祇园傍晚街景时选择，不替代本行程的日间主方案</li>
+          <li>实操：官方公布 12:00–22:00、最晚受理 21:00；务必先确认想订日期的返还与预约规则</li>
         </ul>
       </div>
     </div>
@@ -2827,59 +2813,45 @@ body.capture-mode .export-panel {
       <table>
         <thead>
           <tr>
-            <th>候选类型</th>
-            <th>适合度</th>
-            <th>为什么这样选</th>
-            <th>预算判断</th>
+            <th>店铺</th>
+            <th>最适合的场景</th>
+            <th>预约与到店策略</th>
+            <th>行程衔接</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>岚山温泉 花筏</strong><br><small>岚山，贷切露天风吕 + 房内晚餐</small></td>
-            <td>优先关注</td>
-            <td>官方信息显示住宿晚餐多为部屋食，另有需预约的贷切露天风吕；位置有旅馆氛围，但 Day 6 要提前从奈良回京都。</td>
-            <td>常见基础一泊二食约 2人 5~6万日元起，若加贷切私汤仍可能落在性价比区间。</td>
+            <td><strong>冈本和服租赁</strong><br><small>清水东山店</small></td>
+            <td>第一次体验、清水寺和二三年坂拍照</td>
+            <td>优先锁定 Day 4 中午时段；两人可一起预约，发型和指定款式通常会影响最终价格。</td>
+            <td>伏见稻荷 → 清水五条 → 换装 → 清水寺 → 二年坂/三年坂 → 17:45 前返还。</td>
           </tr>
           <tr>
-            <td><strong>岚山 渡月亭</strong><br><small>岚山，付费私汤时段</small></td>
-            <td>备选</td>
-            <td>官方列出私汤可预约，45分钟 4,400 日元、105分钟 8,800 日元；适合选基础房 + 私汤时段，不必硬上房内私汤。</td>
-            <td>先查平日基础一泊二食价；若总价低于 4,500 元/2人，可列入候选。</td>
+            <td><strong>梦馆五条店</strong><br><small>五条站附近</small></td>
+            <td>想优先选款式、提前在室内完成换装</td>
+            <td>务必在 16:00 前到店；从五条店前往清水寺区域还要预留公交或出租车时间。</td>
+            <td>更适合把 Day 4 调整为“先换装，再去东山”；不建议放在奈良日。</td>
           </tr>
           <tr>
-            <td><strong>高雄 もみぢ家</strong><br><small>自然感强，私汤/露天房选择多</small></td>
-            <td>体验好但更赶</td>
-            <td>官方明确入住 15:00~18:00，19:00 后不能提供晚餐；适合愿意压缩奈良下午行程的人。</td>
-            <td>普通房较合理，露天风吕客房会升价；超过 5,000 元/2人则不作为默认选择。</td>
-          </tr>
-          <tr>
-            <td><strong>南禅寺 八千代</strong><br><small>市区高端私汤套房</small></td>
-            <td>谨慎</td>
-            <td>有 private onsen style garden bathroom 的套房，但官方预订页常见价格明显偏高。</td>
-            <td>除非早鸟/淡季折扣进入 4,500 元以内，否则体验好但不够性价比。</td>
+            <td><strong>CASA 祇园店</strong><br><small>祇园夜拍备选</small></td>
+            <td>更重视傍晚祇园灯光和夜景氛围</td>
+            <td>先确认夜间返还时间；当天带小包即可，不要带大行李。</td>
+            <td>适合替换 Day 4 的傍晚闲逛段，不与清水寺主线叠加。</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="onsen-rules">
-      <div class="onsen-rule"><strong>选址优先级</strong><span>Day 6 从奈良回来，最稳是京都站 / 四条河原町 / 祇园；岚山体验更好但要提前返程；高雄更有度假感但交通更赶。</span></div>
-      <div class="onsen-rule"><strong>晚餐红线</strong><span>预订前确认夕食开始时间。若最晚 19:00 前后开始，建议 17:30 前到旅馆；错过餐时可能无法补。</span></div>
-      <div class="onsen-rule"><strong>私汤红线</strong><span>页面必须写明「貸切風呂」或「客室露天風呂付き」。只写大浴场、展望浴场、公用露天风吕的，直接排除。</span></div>
-      <div class="onsen-rule"><strong>预订红线</strong><span>确认是否一泊二食付き、私汤是否另收费、过敏/忌口需提前几天告知、京都住宿税和入汤税是否另计。</span></div>
-    </div>
-
-    <div class="tip-box">
-      <strong>✅ 本行程推荐买法：</strong>先查平日 / 提前 60 天早鸟的一泊二食基础房，再额外预约贷切私汤；只有当房内私汤总价压在 4,500 元/2人以内，才升级到客室露天风吕付き。这样能保留私密泡汤和怀石晚餐，又不会把整趟预算拉爆。
+    <div class="kimono-checklist">
+      <div class="kimono-rule"><strong>预约红线</strong><span>樱花季、红叶季和周末优先预约；填姓名时与护照拼写保持一致。到店迟到可能压缩体验时长。</span></div>
+      <div class="kimono-rule"><strong>穿着红线</strong><span>带薄内搭和好走的袜子；二年坂、三年坂有石阶，步幅放小，穿木屐不舒服时可直接选择店内配套鞋履。</span></div>
+      <div class="kimono-rule"><strong>随身物品</strong><span>只带手机、证件、补妆用品和少量现金；大行李先寄京都酒店，店内寄放政策以门店当日说明为准。</span></div>
+      <div class="kimono-rule"><strong>归还红线</strong><span>不要把归还卡在闭店前几分钟。主方案在 17:45 前回到冈本清水东山店，归还后再去祇园吃晚餐。</span></div>
     </div>
   </div>
 
   <div class="tip-box" style="margin-top:12px;">
-    <strong>💡 订房建议：</strong>先在 Booking.com / Agoda / 携程看总价和取消政策，再回旅馆官网核实私汤和餐食细节。搜索时优先复制日文关键词：一泊二食付き、貸切風呂、貸切露天風呂、客室露天風呂付き、夕食時間、アレルギー対応。
-  </div>
-
-  <div class="tip-box" style="margin-top:12px;">
-    <strong>📌 核实来源：</strong>旅馆按人计价、餐食通常随房预订且有固定时段，参考 <a href="https://www.japan.travel/en/guide/japanese-ryokan/" target="_blank" rel="noopener">JNTO 日式旅馆指南</a> 与 <a href="https://www.mlit.go.jp/kankocho/ryokan/list_en.html" target="_blank" rel="noopener">日本观光厅 Ryokan Q&A</a>；私汤规则和候选旅馆信息以各旅馆官网为准，重点核对花筏、渡月亭、もみぢ家、八千代的官方预订页。
+    <strong>📌 预约前核实：</strong>以上为官网公开的门店位置与营业信息。预约前进入店铺官网，重新确认体验套餐、是否含发型、尺码范围、当天最晚到店/返还时间以及取消规则；不要只按第三方平台的旧价格下单。
   </div>
 </section>
 
@@ -2895,14 +2867,14 @@ body.capture-mode .export-panel {
       <div class="cat">往返机票（2人）</div>
     </div>
     <div class="budget-item">
-      <div class="amount">8,400</div>
+      <div class="amount">6,300</div>
       <div class="unit">元</div>
-      <div class="cat">住宿（9晚+1晚私汤旅馆）</div>
+      <div class="cat">住宿（10晚普通酒店）</div>
     </div>
     <div class="budget-item">
-      <div class="amount">1,320</div>
+      <div class="amount">1,820</div>
       <div class="unit">元</div>
-      <div class="cat">门票景点</div>
+      <div class="cat">门票景点（含和服体验）</div>
     </div>
     <div class="budget-item">
       <div class="amount">3,500</div>
@@ -2938,12 +2910,12 @@ body.capture-mode .export-panel {
 
   <div class="budget-total">
     <div class="label">2人11天10夜 预估总花费</div>
-    <div class="total">≈ 32,270 元</div>
-    <div class="note">人均约 16,200 元 · 含往返机票 + 1晚私汤一泊二食 + 富士山河口湖 + 镰仓一日游 · 实际花费因消费习惯而异</div>
+    <div class="total">≈ 30,670 元</div>
+    <div class="note">人均约 15,300 元 · 含往返机票 + 清水寺区域和服体验 + 富士山河口湖 + 镰仓一日游 · 实际花费因消费习惯而异</div>
   </div>
 
   <div class="tip-box">
-    <strong>💰 省钱贴士：</strong>① 保留 USJ 和 1 晚私汤一泊二食两个高价值体验，其余高价展望台尽量改为免费外观/街区；② 私汤旅馆优先选基础房 + 预约制贷切私汤，不盲目升级房内露天风吕；③ 大阪城不进天守阁、晴空塔/东京塔不登塔，约可节省 1,000 元左右；④ 富士山和镰仓已分开两天安排，但保留天气互换机制：晴天优先河口湖，阴雨先去镰仓，避免花钱却看不到山；⑤ 日本很多神社寺庙外部区域免费参观，先逛免费区域，再决定是否买票入内。
+    <strong>💰 省钱贴士：</strong>① 保留 USJ 和清水寺区域和服体验两个高价值项目，其余高价展望台尽量改为免费外观/街区；② 京都连住三晚，不为单晚特色住宿支付额外换酒店成本；③ 大阪城不进天守阁、晴空塔/东京塔不登塔，约可节省 1,000 元左右；④ 富士山和镰仓已分开两天安排，但保留天气互换机制：晴天优先河口湖，阴雨先去镰仓，避免花钱却看不到山；⑤ 日本很多神社寺庙外部区域免费参观，先逛免费区域，再决定是否买票入内。
   </div>
 </section>
 
